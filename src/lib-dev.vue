@@ -2,16 +2,21 @@
   <div>
       <h1>Testing Component</h1>
       <sec-if-all-granted :roles="roles" :user="user">
-          <p>secure stuff here</p>
+          <p>All granted security check</p>
       </sec-if-all-granted>
+      <sec-if-any-granted :roles="roles" :user="user">
+          <p>Any granted security check</p>
+      </sec-if-any-granted>
   </div>
 </template>
 
 <script>
   import { SecIfAllGranted } from './entry'
+  import { SecIfAnyGranted } from './entry'
   export default {
     components: {
-      SecIfAllGranted
+      SecIfAllGranted,
+      SecIfAnyGranted
     },
     data () {
       return {
