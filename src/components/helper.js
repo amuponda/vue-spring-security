@@ -1,4 +1,4 @@
-let props = {
+export let props = {
   roles: {
     type: Array,
     required: true
@@ -12,4 +12,11 @@ let props = {
   }
 }
 
-export default props
+export let ifAnyGranted = (roles, authorities) => {
+ for (const role of roles) {
+   if (authorities.includes(role)) {
+     return true
+   }
+ }
+ return false
+}

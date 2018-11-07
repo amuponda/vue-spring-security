@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import props from './helper'
+  import { props } from './helper'
   export default {
     name: 'IfAllGranted',
     props: props,

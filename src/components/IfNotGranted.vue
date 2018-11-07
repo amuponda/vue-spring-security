@@ -5,13 +5,13 @@
 </template>
 
 <script>
- import { props, ifAnyGranted } from "./helper"
+ import { props, ifAnyGranted } from './helper'
  export default {
-   name: 'IfAnyGranted',
+   name: 'IfNotGranted',
    props: props,
    computed: {
      show () {
-       return ifAnyGranted(this.roles, this.user.authorities)
+       return !ifAnyGranted(this.roles, this.user.authorities)
      }
    }
  }

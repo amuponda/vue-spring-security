@@ -7,16 +7,22 @@
       <sec-if-any-granted :roles="roles" :user="user">
           <p>Any granted security check</p>
       </sec-if-any-granted>
+      <sec-if-not-granted :roles="roles" :user="user">
+          <p>This will not show</p>
+      </sec-if-not-granted>
   </div>
 </template>
 
 <script>
   import { SecIfAllGranted } from './entry'
   import { SecIfAnyGranted } from './entry'
+  import { SecIfNotGranted } from "./entry"
+
   export default {
     components: {
       SecIfAllGranted,
-      SecIfAnyGranted
+      SecIfAnyGranted,
+      SecIfNotGranted
     },
     data () {
       return {
