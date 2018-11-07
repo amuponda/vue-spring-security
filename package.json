@@ -2,29 +2,29 @@
   "name": "vue-spring-security",
   "version": "0.2.0",
   "main": "dist/vue-spring-security.umd.js",
-  "unpkg": "dist/vue-spring-security.umd.min.js",
+  "module": "dist/vue-spring-security.esm.js",
+  "unpkg": "dist/vue-spring-security.min.js",
   "private": false,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib ./src/entry.js"
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-spring-security.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-spring-security.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-spring-security.min.js"
   },
   "files": [
     "dist/*",
     "src/*",
-    "*.json",
-    "*.js"
+    "!src/lib-dev.vue"
   ],
   "dependencies": {},
   "devDependencies": {
+    "minimist": "^1.2.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-plugin-vue": "^4.3.0",
     "vue": "^2.5.17",
-    "@vue/cli-plugin-babel": "^3.1.0",
-    "@vue/cli-service": "^3.1.0",
     "vue-template-compiler": "^2.5.17"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
   },
   "browserslist": [
     "> 1%",

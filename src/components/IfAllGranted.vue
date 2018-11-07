@@ -11,8 +11,8 @@
     props: props,
     computed: {
       show () {
-        for (const role of this.roles) {
-          if (!this.user.authorities.includes(role)) {
+        for (let i = 0; i < this.roles.length; i++) {
+          if (!this.user.authorities.includes(this.roles[i])) {
             return false
           }
         }

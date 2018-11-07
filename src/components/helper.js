@@ -13,8 +13,8 @@ export let props = {
 }
 
 export let ifAnyGranted = (roles, authorities) => {
- for (const role of roles) {
-   if (authorities.includes(role)) {
+ for (let i = 0; i < roles.length; i++) {
+   if (authorities.includes(roles[i])) {
      return true
    }
  }
