@@ -9,10 +9,15 @@ yarn add vue-spring-security
 ```
 ### Unpkg
 If inluced via this method the components will automatically install itself.
-### Importing
-You can import the components as follows
 ```
-import SecIfAllGranted from 'vue-spring-security'
+<script type="text/javascript" src="https://unpkg.com/vue-spring-security"></script>
+<script type="text/javascript" src="https://unpkg.com/vue-spring-securityt@0.3.0"></script>
+                                                                <!-- Specific version -->
+```
+### Importing
+You can import the component(s) as follows:
+```
+import { SecIfAllGranted } from 'vue-spring-security'
 ```
 ## Component API
 ### Props
