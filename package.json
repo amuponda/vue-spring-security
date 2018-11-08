@@ -3,7 +3,7 @@
   "description": "security components for conditionally rendering ui based on user roles ",
   "author": "amuponda",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/vue-spring-security.umd.js",
   "module": "dist/vue-spring-security.esm.js",
   "unpkg": "dist/vue-spring-security.min.js",
