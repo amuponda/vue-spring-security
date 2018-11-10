@@ -12,7 +12,9 @@
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-spring-security.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-spring-security.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-spring-security.min.js"
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-spring-security.min.js",
+    "test": "npm run build:test && jest vue-spring-security.test --notify",
+    "build:test": "rollup --config build/rollup.test-config.js --format umd --file vue-spring-security.test.js"
   },
   "keywords": [
     "vue",
@@ -25,6 +27,8 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.13",
+    "jest": "^21.2.1",
     "minimist": "^1.2.0",
     "rollup": "^0.66.2",
     "rollup-plugin-buble": "^0.19.2",
